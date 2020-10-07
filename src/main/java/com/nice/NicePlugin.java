@@ -61,8 +61,6 @@ public class NicePlugin extends Plugin
 	@Subscribe
 	public void onChatMessage(ChatMessage event){
 
-		log.info("Chat message received");
-
 		// If it's not a public message, we don't care
 		if (event.getType() != ChatMessageType.PUBLICCHAT){
 			return;
@@ -90,7 +88,7 @@ public class NicePlugin extends Plugin
 			threads.add(new PlayerMessageThread(player, wordList.get(random.nextInt(wordList.size()))));
 		}
 
-		BigChatThread chatThread = new BigChatThread(threads);
+		BigChatThread chatThread = new BigChatThread(threads, config.partyLength() * 1000f);
 
 		chatThread.start();
 

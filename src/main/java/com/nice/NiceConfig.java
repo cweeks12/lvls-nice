@@ -8,6 +8,7 @@ import net.runelite.client.config.ConfigItem;
 public interface NiceConfig extends Config
 {
 	@ConfigItem(
+			position = 1,
 		keyName = "responses",
 		name = "Responses",
 		description = "The comma-separated messages to choose from."
@@ -17,5 +18,14 @@ public interface NiceConfig extends Config
 		return "Nice., Nice!, Nice";
 	}
 
-
+	@ConfigItem(
+			position = 2,
+			keyName = "partyLength",
+			name = "Party Length (seconds)",
+			description = "Number of seconds to spread the messages over"
+	)
+	default int partyLength(){
+		return 5;
+	}
 }
+

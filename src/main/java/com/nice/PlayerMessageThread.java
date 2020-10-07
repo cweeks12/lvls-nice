@@ -13,7 +13,7 @@ public class PlayerMessageThread extends Thread{
     }
 
     public void run(){
-        this.player.setOverheadText(this.message);
+        this.player.setOverheadText("glow1:shake:" + this.message);
         try {
             Thread.sleep(3000);
         }
