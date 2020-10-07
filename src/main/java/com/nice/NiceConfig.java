@@ -8,12 +8,14 @@ import net.runelite.client.config.ConfigItem;
 public interface NiceConfig extends Config
 {
 	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
+		keyName = "responses",
+		name = "Responses",
+		description = "The comma-separated messages to choose from."
 	)
-	default String greeting()
+	default String responses()
 	{
-		return "Hello";
+		return "Nice., Nice!, Nice";
 	}
+
+
 }
